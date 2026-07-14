@@ -1,0 +1,85 @@
+.navbar {
+    height: 64px;
+    background: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.nav-logo {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; /* prevents line break */
+}
+
+/* Each item */
+.nav-links li {
+  display: inline-block;
+}
+
+/* Links */
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-links a.active {
+  color: #fff;
+  background: rgba(55,138,221,0.18);
+}
+
+/* USER SECTION */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #185FA5;
+  color: #B5D4F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #94a3b8;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}

@@ -1,0 +1,17 @@
+.review-quote {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  color: #555;
+  flex-wrap: wrap;
+}
+.quote-text {
+  flex: 1;
+}
+.quote-author {
+  flex: 0;
+  text-align: right;
+  min-width: 200px;
+}

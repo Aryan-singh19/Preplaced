@@ -1,0 +1,96 @@
+/* Container for the full-screen effect */
+.lively-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* Back-up background color */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+/* Position and scale the video to cover the screen */
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Important to maintain video aspect ratio and fill the space */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Lowest layer */
+}
+
+/* Semi-transparent overlay to ensure text readability */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* Adjust the alpha for darkness */
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center; /* Center content vertically */
+  padding: 0 10%; /* General padding from the screen edges */
+}
+
+/* Container for text positioning */
+.text-wrapper {
+  max-width: 60%; /* Limit text width for a clean look */
+  margin-top: -10%; /* Adjust vertical alignment for a balanced feel */
+}
+
+/* Styling for the small category/subtitle text */
+.category-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #f1f1f1;
+}
+
+/* Styling for the main, impactful headline */
+.main-headline {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: -1.5px;
+}
+
+/* Styling for the smaller description text */
+.description-text {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 90%; /* Further limit paragraph width */
+  color: #e0e0e0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+  .text-wrapper {
+    max-width: 80%;
+  }
+  .main-headline {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-wrapper {
+    max-width: 100%;
+    margin-top: 0; /* Center better on mobile */
+  }
+  .main-headline {
+    font-size: 36px;
+  }
+  .description-text {
+    font-size: 16px;
+  }
+  .content-overlay {
+    padding: 0 15px; /* Less padding on small screens */
+  }
+}

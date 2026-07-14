@@ -1,0 +1,215 @@
+.hero-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px; 
+  margin-bottom: 0; /* REMOVED BOTTOM MARGIN HERE */
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-slide {
+  width: 100%;
+  min-height: 320px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px; 
+  box-sizing: border-box;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+/* --- Slide Animations --- */
+.hero-slide.enter {
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-slide.exit-left {
+  animation: slideOutLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-slide.exit-right {
+  animation: slideOutRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(6%); opacity: 0.4; }
+  to   { transform: translateX(0);  opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0);  opacity: 1; }
+  to   { transform: translateX(-6%); opacity: 0.4; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0);  opacity: 1; }
+  to   { transform: translateX(6%); opacity: 0.4; }
+}
+
+/* --- Layout --- */
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px; 
+  margin: 0 auto;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 12px; 
+  flex: 1;
+}
+
+/* --- Typography --- */
+.hero-tag {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.75rem; 
+  font-weight: 800;
+  padding: 4px 12px; 
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 2.8rem; 
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-desc {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem; 
+  margin: 0 auto;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* --- Features Pills --- */
+.hero-features-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px; 
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.hero-feature-pill {
+  background: rgba(255, 255, 255, 0.1);
+ 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px; 
+  border-radius: 20px;
+  font-size: 0.8rem; 
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* --- Button --- */
+.hero-bottom {
+  margin-top: 8px; 
+  display: flex;
+  justify-content: center;
+}
+
+.hero-cta-btn {
+  color: white;
+  border: none;
+  padding: 12px 28px; 
+  border-radius: 30px;
+  font-size: 1rem; 
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.hero-cta-btn:active {
+  transform: translateY(1px);
+}
+
+/* --- Arrows & Dots --- */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.6rem; 
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.hero-arrow:hover { 
+  background: rgba(255,255,255,0.25); 
+  transform: translateY(-50%) scale(1.1);
+}
+
+.hero-arrow.left  { left: 20px; padding-bottom: 3px; }
+.hero-arrow.right { right: 20px; padding-bottom: 3px; }
+
+.hero-dots {
+  position: absolute;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-dot {
+  height: 6px; 
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .hero-slide { padding: 30px 40px; }
+  .hero-title { font-size: 2.4rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-slide { 
+    padding: 30px 20px 50px 20px; 
+    min-height: 340px;
+  }
+  .hero-title { font-size: 2rem; }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-arrow { display: none; }
+}

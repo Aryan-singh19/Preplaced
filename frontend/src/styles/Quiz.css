@@ -1,0 +1,135 @@
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    background-color: #f8fafc;
+    min-height: calc(100vh - 100px);
+}
+
+.question-card,
+.result-card {
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option-box {
+    background: #f1f5f9;
+    padding: 18px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    color: #334155;
+    text-align: left;
+}
+
+.option-box:hover {
+    background: #e2e8f0;
+}
+
+.option-box.selected {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+}
+
+.next-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.next-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.result-card h2 {
+    font-size: 3rem;
+    color: #10b981;
+    margin-bottom: 20px;
+}
+
+.result-card p {
+    font-size: 1.5rem;
+    color: #334155;
+    margin-bottom: 40px;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}

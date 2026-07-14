@@ -1,0 +1,81 @@
+/* Base container matching the dark theme */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b1120; /* Dark navy background */
+  color: #ffffff;
+  padding: 40px 0;
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #1e293b; /* Subtle outer border */
+}
+
+/* Individual stat blocks with dividers */
+.stat-box {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #1e293b; /* Subtle inner dividers */
+  padding: 0 15px;
+}
+
+.stat-box.last-box {
+  border-right: none; /* Removes the divider on the last item */
+}
+
+/* The numbers */
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: Georgia, serif; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; /* Space between number and symbols like % or + */
+}
+
+/* The high-impact vocabulary text */
+.stat-text {
+  font-size: 15px;
+  color: #94a3b8; /* Light grayish-blue for the subtitle */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Pulsing dot for the live counter to make it feel "active" */
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #22c55e; /* Green indicator */
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+  }
+  .stat-box {
+    border-right: none;
+  }
+}

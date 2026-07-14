@@ -1,0 +1,264 @@
+/* =========================================
+   Interactive Roadmap Styles
+========================================= */
+
+.roadmap-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #F8FAFC;
+  background-color: transparent;
+}
+
+/* --- Header & Progress Bar --- */
+.roadmap-header {
+  margin-bottom: 40px;
+}
+
+.roadmap-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.roadmap-header p {
+  color: #94A3B8;
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.progress-container {
+  background: #151A27;
+  border: 1px solid #2A3241;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 1.05rem;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 14px;
+  background: #0B0F19;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px inset #2A3241;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Accordion Sections --- */
+.roadmap-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.roadmap-section {
+  background: #151A27;
+  border: 1px solid #2A3241;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-section:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Lights up green when all topics in a phase are checked */
+.roadmap-section.section-completed {
+  border-color: rgba(16, 185, 129, 0.5); 
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 24px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.section-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.toggle-icon {
+  color: #3B82F6;
+  font-size: 0.9rem;
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.section-stats {
+  background: #0B0F19;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #94A3B8;
+  border: 1px solid #2A3241;
+}
+
+.roadmap-section.section-completed .section-stats {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* --- Topics / Checkboxes --- */
+.section-body {
+  border-top: 1px solid #2A3241;
+  background: #0f131f; /* Slightly darker background for the body */
+}
+
+.topic-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 18px 60px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(42, 50, 65, 0.4);
+  transition: background 0.2s;
+}
+
+.topic-row:last-child {
+  border-bottom: none;
+}
+
+.topic-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.topic-row.done .topic-title {
+  text-decoration: line-through;
+  color: #475569;
+}
+
+.topic-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Custom Checkbox Design */
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid #3B82F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.custom-checkbox.checked {
+  background: #3B82F6;
+  border-color: #3B82F6;
+  color: white;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+.topic-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.topic-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- Tags --- */
+.difficulty-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty-tag.easy { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.difficulty-tag.medium { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.difficulty-tag.hard { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+
+.time-tag {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .roadmap-page {
+    padding: 30px 15px;
+  }
+  
+  .roadmap-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .topic-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .topic-right {
+    margin-left: 42px; /* Aligns tags perfectly under the text */
+    width: calc(100% - 42px);
+    justify-content: flex-start;
+  }
+}

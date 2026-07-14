@@ -1,0 +1,72 @@
+/* Container styling with a subtle diagonal gradient to mimic the geometric background */
+.banner-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  background-image: linear-gradient(120deg, rgba(255,255,255,1) 60%, rgba(243,244,246,0.8) 100%);
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Wrapper to limit the maximum width of the content */
+.banner-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Breadcrumb navigation styling */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #4b5563; /* Medium grey */
+  margin-bottom: 24px;
+}
+
+.home-icon {
+  color: #374151; /* Darker grey */
+  cursor: pointer;
+}
+
+.chevron {
+  font-size: 12px;
+  color: #9ca3af; /* Light grey */
+}
+
+.breadcrumb-text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* Typography for the main title */
+.banner-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #374151; /* Dark grey */
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 24px;
+  max-width: 1000px;
+}
+
+/* Typography for the description paragraph */
+.banner-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563; /* Medium grey */
+  margin: 0;
+  max-width: 1150px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .banner-container {
+    padding: 30px 20px;
+  }
+  
+  .banner-title {
+    font-size: 32px;
+  }
+}
