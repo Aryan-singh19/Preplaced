@@ -1,0 +1,30 @@
+:root {
+  --primary-blue: #2563eb;
+  --dark-bg: #1a1a1a;
+  --light-gray: #f4f7f6;
+  --text-main: #333;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+main {
+  padding-top: 80px; /* Space for the fixed Navbar */
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
