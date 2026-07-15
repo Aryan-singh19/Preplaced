@@ -64,47 +64,102 @@ placemate-ai/
     └── package.json   # Backend dependencies and setup
 ```
 
-## 🚀 Getting Started
+## 🚀 Getting Started & Forking Guide
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+Follow these comprehensive, step-by-step instructions to fork, install, configure, and run your own instance of **Placemate AI** locally or in the cloud.
 
-### Running the Frontend
-1. Navigate to the frontend directory:
+### 📋 Prerequisites
+Before you start, make sure you have the following installed on your local development machine:
+- **[Node.js](https://nodejs.org/)** (v18.x or v20.x+ recommended)
+- **[Git](https://git-scm.com/)** for version control
+- A **MongoDB** database (either a local instance or a free cloud cluster on **[MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database)**)
+
+---
+
+### 🍴 Step 1: Fork the Repository
+1. Navigate to the top of this GitHub repository page.
+2. Click the **Fork** button in the upper-right corner.
+3. Select your personal GitHub account or organization as the destination.
+4. Click **Create Fork** to generate a copy of the codebase under your own GitHub namespace.
+
+---
+
+### 💻 Step 2: Clone Your Forked Repo
+Open your terminal and run the following command (replace `YOUR_USERNAME` with your actual GitHub username):
+
+```bash
+git clone https://github.com/YOUR_USERNAME/placemate-ai.git
+cd placemate-ai
+```
+
+---
+
+### 📦 Step 3: Install All Dependencies
+Placemate AI operates as a highly optimized, unified full-stack application. All backend and React frontend dependencies are managed through the root `package.json`. You only need to run the installation command **once at the project root**:
+
+```bash
+npm install
+```
+
+---
+
+### 🔑 Step 4: Configure Environment Variables
+1. At the root directory of your cloned project, copy the environment template file:
    ```bash
-   cd frontend
+   cp .env.example .env
    ```
-2. Install dependencies:
+2. Open the newly created `.env` file in your preferred code editor and fill in your custom keys:
+
+```env
+PORT=3000
+NODE_ENV=development
+
+# 1. MongoDB Connection URI
+# For local development: mongodb://127.0.0.1:27017/placemate_db
+# For production/cloud: mongodb+srv://<user>:<password>@cluster.mongodb.net/placemate_db
+MONGO_URI=mongodb://127.0.0.1:27017/placemate_db
+
+# 2. JWT Signing Secret (Used to secure user sessions)
+# Generate a strong, unique secret key
+JWT_SECRET=your_jwt_signing_secret_here
+
+# 3. Google Gemini API Key (Highly Recommended)
+# Obtain your free API key at: https://aistudio.google.com/
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# 4. Hugging Face Access Token (Optional fallback)
+# Obtain a token at: https://huggingface.co/settings/tokens
+HF_TOKEN=your_huggingface_token_here
+```
+
+---
+
+### 🚀 Step 5: Start Your Application
+
+#### Development Mode (With Hot Reloading)
+To run the full-stack server under developer mode (which serves the Node backend and mounts the Vite frontend compiler simultaneously on port `3000`):
+
+```bash
+npm run dev
+```
+Open **[http://localhost:3000](http://localhost:3000)** in your browser to explore your custom instance.
+
+#### Production Build & Execution
+To build the React application assets and run the Node server in standard production mode:
+
+1. Compile the production assets:
    ```bash
-   npm install
+   npm run build
    ```
-3. Start the Vite development server:
+2. Start the production server:
    ```bash
-   npm run dev
+   npm start
    ```
 
-### Running the Backend
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set your environment variables in a `.env` file:
-   ```env
-   MONGO_URI=your_mongodb_uri
-   HF_TOKEN=your_huggingface_token
-   GEMINI_API_KEY=your_gemini_api_key
-   JWT_SECRET=your_jwt_signing_secret
-   ```
-4. Start the backend server:
-   ```bash
-   npx nodemon index.js
-   ```
+---
 
 ## 👩‍💻 Author
 Created with ❤️ by **Arti Verma**.
 
 *"Master Skills. Ace Interviews. Get Hired."*
+
