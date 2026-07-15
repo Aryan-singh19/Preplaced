@@ -133,3 +133,52 @@
 .btn-secondary:hover {
     background: #cbd5e1;
 }
+
+/* AI Explanation and Action Styles */
+.quiz-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.option-box.option-correct {
+    background: #f0fdf4 !important;
+    border-color: #22c55e !important;
+    color: #15803d !important;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.option-box.option-wrong {
+    background: #fef2f2 !important;
+    border-color: #ef4444 !important;
+    color: #b91c1c !important;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+}
+
+.quiz-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: quizSpin 0.8s linear infinite;
+}
+
+@keyframes quizSpin {
+    to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

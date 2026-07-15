@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Quiz from './pages/Quiz';
+import InterviewSimulator from './pages/InterviewSimulator';
 
 // Roadmap Pages
 import RoadmapWrapper from './pages/RoadmapWrapper';
@@ -82,6 +83,7 @@ function App() {
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/aptitude" element={<Aptitude />} />
           <Route path="/resume-checker" element={<ResumeChecker />} />
+          <Route path="/interview-ai" element={<InterviewSimulator />} />
           <Route path="/course-ai" element={<CourseAI />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />

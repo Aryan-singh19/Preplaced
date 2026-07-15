@@ -12,6 +12,7 @@ const Navbar = ({ user, setUser }) => {
     { to: '/resume-checker', label: 'Resume' },
     { to: '/roadmaps', label: 'Roadmaps' },
     { to: '/aptitude', label: 'Practice' },
+    { to: '/interview-ai', label: 'Mock Interview' },
   ];
 
   const initials = user?.name

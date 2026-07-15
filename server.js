@@ -14,6 +14,7 @@ import connectDB from './backend/config/db.js';
 import rateLimiters from './backend/middleware/rateLimiter.js';
 import authRoutes from './backend/routes/authRoutes.js';
 import resumeRoutes from './backend/routes/resumeRoutes.js';
+import interviewRoutes from './backend/routes/interviewRoutes.js';
 
 const { generateApiLimiter } = rateLimiters;
 
@@ -41,6 +42,7 @@ async function startServer() {
   // 4. API Endpoints
   app.use('/api/auth', authRoutes);
   app.use('/api/resume', resumeRoutes);
+  app.use('/api/interview', interviewRoutes);
 
   app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'Ok', message: 'Placemate AI server is running securely!' });
