@@ -1,0 +1,8 @@
+{
+  "name": "Placemate AI",
+  "description": "An AI-powered placement preparation, roadmap, and resume analysis companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

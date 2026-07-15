@@ -16,7 +16,7 @@ const SignPage = ({ setUser }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleAuth = (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
     setError('');
 
@@ -30,18 +30,33 @@ const SignPage = ({ setUser }) => {
       return;
     }
 
-    // Replace this block with your real API call
-    // For now, simulating a successful login/signup
-    const userData = {
-      name: formData.name || 'User',
-      email: formData.email,
-      branch: 'CSE',   // replace with actual data from your API
-      year: '3rd year', // replace with actual data from your API
-    };
+    try {
+      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    localStorage.setItem('user', JSON.stringify(userData)); // persist across refresh
-    setUser(userData);   // update App state → Navbar will show user info
-    navigate('/landing');
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Authentication failed. Please try again.');
+      }
+
+      // Store user and token
+      localStorage.setItem('user', JSON.stringify(data.user));
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+      }
+
+      setUser(data.user);   // update App state → Navbar will show user info
+      navigate('/landing');
+    } catch (err) {
+      setError(err.message || 'An error occurred during authentication.');
+    }
   };
 
   return (

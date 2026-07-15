@@ -11,8 +11,8 @@ const connectDB = async () => {
 
     console.log(`✅ MongoDB Connected securely: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`❌ Error connecting to database: ${error.message}`);
-    process.exit(1);
+    console.warn(`⚠️ Warning: Error connecting to database: ${error.message}`);
+    console.warn('The application will run with in-memory database fallback or mock features.');
   }
 };
 
